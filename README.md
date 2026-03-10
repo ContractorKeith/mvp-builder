@@ -20,6 +20,19 @@ Each repo has one job.
 
 ---
 
+## Getting started
+
+**Option 1 — Use as a GitHub template** (recommended):
+Click the **"Use this template"** button on GitHub to create your own copy.
+
+**Option 2 — Clone directly:**
+```bash
+git clone https://github.com/ContractorKeith/mvp-builder.git my-project
+cd my-project
+```
+
+---
+
 ## Quickstart
 
 **With a planning handoff:**
