@@ -16,7 +16,7 @@ project-planner  →  outputs/  →  mvp-builder  →  ship
 `project-planner` produces the plan. `mvp-builder` executes it.
 Each repo has one job.
 
-> See [project-planner](https://github.com/ContractorKeith/project-planner) _(coming soon)_ for the planning side of the chain.
+> See [project-planner](https://github.com/ContractorKeith/project-planner) for the planning side of the chain.
 
 ---
 
