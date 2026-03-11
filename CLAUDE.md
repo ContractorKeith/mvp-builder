@@ -78,7 +78,10 @@ Read a skill file before invoking it.
 |---|---|
 | `skills/task-breakdown.md` | When a task is too big — break it into steps |
 | `skills/code-reviewer.md` | After generating any significant block of code |
+| `skills/pre-build-checklist.md` | Before starting any task — confirms spec, done criteria, dependencies |
 | `skills/progress-tracker.md` | To update SESSION.md and TASKS.md |
+| `skills/spec-audit.md` | After a sprint completes — verify build matches PRD before marking done |
+| `skills/remediation.md` | When feedback accumulates after a build — plan and batch all fixes |
 | `skills/inline-planning.md` | When there's no handoff and user wants to plan briefly |
 | `skills/skill-creator.md` | When a new capability is needed mid-session |
 
