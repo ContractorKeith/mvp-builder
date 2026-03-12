@@ -98,7 +98,7 @@ Create these files before starting the build loop:
 Say:
 > "Quick plan is set. Here's sprint 1: [task list]. Ready to start with [first task]?"
 
-Then hand off to the normal build loop in `CLAUDE.md`.
+Then hand off to the normal build loop in the orchestrator.
 
 ---
 

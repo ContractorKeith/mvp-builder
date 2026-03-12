@@ -61,14 +61,14 @@ cd my-project
 
 ## How to use
 
-The repo includes orchestrator files for several major AI coding tools.
-Your tool should automatically pick up the correct file.
+The core logic is stored in `skills/orchestrator.md`. But you don't need to do anything manually because we provide proxy files out of the box for the most common tools. Each AI tool will read its respective proxy file automatically:
 
-| Tool | Orchestrator File | Setup |
-|---|---|---|
-| Claude Code | `CLAUDE.md` | Works out of the box |
-| OpenAI Codex | `AGENTS.md` | Works out of the box |
-| Gemini CLI | `GEMINI.md` | Works out of the box |
+| Tool | Setup |
+|---|---|
+| Claude Code | Works out of the box — reads `CLAUDE.md` automatically |
+| OpenAI Codex | Works out of the box — reads `AGENTS.md` automatically |
+| Gemini CLI | Works out of the box — reads `GEMINI.md` automatically |
+| Cursor / Windsurf | Works out of the box — governed by `.cursorrules` / `.windsurfrules` |
 
 ---
 
@@ -76,37 +76,40 @@ Your tool should automatically pick up the correct file.
 
 ```
 mvp-builder/
-├── CLAUDE.md              ← orchestrator for Claude
-├── AGENTS.md              ← orchestrator for OpenAI
-├── GEMINI.md              ← orchestrator for Gemini
+├── .cursorrules              ← IDE instructions for Cursor
+├── .windsurfrules            ← IDE instructions for Windsurf
+├── CLAUDE.md                 ← proxy to orchestrator
+├── GEMINI.md                 ← proxy to orchestrator
+├── AGENTS.md                 ← proxy to orchestrator
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
 │
 ├── templates/
-│   └── new-project/       ← clean handoff files for a new project
+│   └── new-project/          ← clean handoff files for a new project
 │       ├── PRD.md
 │       ├── STACK.md
 │       ├── TASKS.md
 │       └── CONTEXT.md
 │
 ├── skills/
-│   ├── skill-creator.md   ← create new skills mid-session
-│   ├── task-breakdown.md  ← break large tasks into steps
-│   ├── code-reviewer.md   ← review code against PRD + stack
-│   ├── progress-tracker.md← update SESSION.md + TASKS.md
-│   └── inline-planning.md ← quick plan when no handoff exists
+│   ├── orchestrator.md       ← core orchestrator logic
+│   ├── skill-creator.md      ← create new skills mid-session
+│   ├── task-breakdown.md     ← break large tasks into steps
+│   ├── code-reviewer.md      ← review code against PRD + stack
+│   ├── progress-tracker.md   ← update SESSION.md + TASKS.md
+│   └── inline-planning.md    ← quick plan when no handoff exists
 │
 ├── examples/
-│   └── quickquote/        ← sample handoff + session state
+│   └── quickquote/           ← sample handoff + session state
 │       ├── PRD.md
 │       ├── STACK.md
 │       ├── TASKS.md
 │       ├── CONTEXT.md
 │       └── SESSION.md
 │
-└── outputs/               ← session state, generated artifacts
-    └── SESSION.md         ← written each session, read on init
+└── outputs/                  ← session state, generated artifacts
+    └── SESSION.md            ← written each session, read on init
 ```
 
 ---
