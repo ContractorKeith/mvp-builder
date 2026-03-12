@@ -36,38 +36,39 @@ cd my-project
 ## Quickstart
 
 **With a planning handoff:**
-1. Copy `PRD.md`, `STACK.md`, `TASKS.md`, `CONTEXT.md` from `project-planner/outputs/` into this repo root
-2. Open in your AI coding tool
-3. Say `/init`
+1. Copy the files from `templates/new-project/` into the root of this repo.
+2. Fill them out with your project's details.
+3. Open in your AI coding tool.
+4. Say `/init`
 
-> **Note:** project-planner names the context file based on your tool (`CLAUDE.md`, `AGENTS.md`, etc.).
-> Rename it to `CONTEXT.md` before dropping it in — this avoids overwriting the orchestrator.
+> **Note:** The `CONTEXT.md` file in the template is a placeholder. You may still want to bring over context from a `project-planner` run.
 
 **Without a handoff:**
-1. Open in your AI coding tool
-2. Say `/init` or describe what you want to build
-3. The AI runs a quick inline planning pass, then builds
+1. Open in your AI coding tool.
+2. Say `/init` or describe what you want to build.
+3. The AI runs a quick inline planning pass, then builds.
 
 ---
 
 ## What the AI does
 
-1. Reads your plan files
-2. Works through `TASKS.md` sprint 1, one task at a time
-3. After each task: tells you what was built, what to verify, marks it done
-4. Saves progress to `outputs/SESSION.md` so any session can pick up mid-sprint
+1. Reads your plan files.
+2. Works through `TASKS.md` sprint 1, one task at a time.
+3. After each task: tells you what was built, what to verify, and marks it done.
+4. Saves progress to `outputs/SESSION.md` so any session can pick up mid-sprint.
 
 ---
 
 ## How to use
 
-The orchestrator file is `CLAUDE.md`. Each AI tool reads it automatically:
+The repo includes orchestrator files for several major AI coding tools.
+Your tool should automatically pick up the correct file.
 
-| Tool | Setup |
-|---|---|
-| Claude Code | Works out of the box — reads `CLAUDE.md` automatically |
-| OpenAI Codex | Copy or rename `CLAUDE.md` to `AGENTS.md` |
-| Gemini CLI | Copy or rename `CLAUDE.md` to `GEMINI.md` |
+| Tool | Orchestrator File | Setup |
+|---|---|---|
+| Claude Code | `CLAUDE.md` | Works out of the box |
+| OpenAI Codex | `AGENTS.md` | Works out of the box |
+| Gemini CLI | `GEMINI.md` | Works out of the box |
 
 ---
 
@@ -75,10 +76,19 @@ The orchestrator file is `CLAUDE.md`. Each AI tool reads it automatically:
 
 ```
 mvp-builder/
-├── CLAUDE.md              ← orchestrator
+├── CLAUDE.md              ← orchestrator for Claude
+├── AGENTS.md              ← orchestrator for OpenAI
+├── GEMINI.md              ← orchestrator for Gemini
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
+│
+├── templates/
+│   └── new-project/       ← clean handoff files for a new project
+│       ├── PRD.md
+│       ├── STACK.md
+│       ├── TASKS.md
+│       └── CONTEXT.md
 │
 ├── skills/
 │   ├── skill-creator.md   ← create new skills mid-session
